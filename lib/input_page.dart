@@ -1,3 +1,4 @@
+import 'package:bmi_calculator/reusable_card.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
@@ -18,57 +19,17 @@ class _InputPageState extends State<InputPage> {
           Expanded(
             child: Row(
               children: <Widget>[
-                Expanded(
-                  child: Container(
-                    margin: EdgeInsets.all(10),
-                    decoration: BoxDecoration(
-                      color: Color(0xFF1D1E33),
-                      borderRadius: BorderRadius.circular(15),
-                    ),
-                  ),
-                ),
-                Expanded(
-                  child: Container(
-                    margin: EdgeInsets.all(10),
-                    decoration: BoxDecoration(
-                      color: Color(0xFF1D1E33),
-                      borderRadius: BorderRadius.circular(15),
-                    ),
-                  ),
-                ),
+                ReusableCard(),
+                ReusableCard(),
               ],
             ),
           ),
-          Expanded(
-            child: Container(
-              margin: EdgeInsets.all(10),
-              decoration: BoxDecoration(
-                color: Color(0xFF1D1E33),
-                borderRadius: BorderRadius.circular(15),
-              ),
-            ),
-          ),
+          ReusableCard(),
           Expanded(
             child: Row(
               children: <Widget>[
-                Expanded(
-                  child: Container(
-                    margin: EdgeInsets.all(10),
-                    decoration: BoxDecoration(
-                      color: Color(0xFF1D1E33),
-                      borderRadius: BorderRadius.circular(15),
-                    ),
-                  ),
-                ),
-                Expanded(
-                  child: Container(
-                    margin: EdgeInsets.all(10),
-                    decoration: BoxDecoration(
-                      color: Color(0xFF1D1E33),
-                      borderRadius: BorderRadius.circular(15),
-                    ),
-                  ),
-                ),
+                ReusableCard(),
+                ReusableCard(),
               ],
             ),
           ),
