@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 
 class ReusableCard extends StatelessWidget {
-  Color color;
+  final Color color;
 
-  ReusableCard({this.color = const Color(0xFF1D1E33)});
+  ReusableCard({@required this.color});
 
   @override
   Widget build(BuildContext context) {

@@ -2,6 +2,9 @@ import 'package:bmi_calculator/reusable_card.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
+const cardColor = Color(0xFF1D1E33);
+const secondaryColor = Color(0xFFEB1555);
+
 class InputPage extends StatefulWidget {
   @override
   _InputPageState createState() => _InputPageState();
@@ -19,20 +22,36 @@ class _InputPageState extends State<InputPage> {
           Expanded(
             child: Row(
               children: <Widget>[
-                ReusableCard(),
-                ReusableCard(),
+                ReusableCard(
+                  color: cardColor,
+                ),
+                ReusableCard(
+                  color: cardColor,
+                ),
               ],
             ),
           ),
-          ReusableCard(),
+          ReusableCard(
+            color: cardColor,
+          ),
           Expanded(
             child: Row(
               children: <Widget>[
-                ReusableCard(),
-                ReusableCard(),
+                ReusableCard(
+                  color: cardColor,
+                ),
+                ReusableCard(
+                  color: cardColor,
+                ),
               ],
             ),
           ),
+          Container(
+            height: 80,
+            color: secondaryColor,
+            width: double.infinity,
+            margin: EdgeInsets.only(top: 10),
+          )
         ],
       ),
     );
