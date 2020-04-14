@@ -35,38 +35,34 @@ class _InputPageState extends State<InputPage> {
             child: Row(
               children: <Widget>[
                 Expanded(
-                  child: GestureDetector(
+                  child: ReusableCard(
                     onTap: () {
                       setState(() {
                         selectedGender = Gender.male;
                       });
                     },
-                    child: ReusableCard(
-                      color: (selectedGender == Gender.male)
-                          ? activeCardColor
-                          : inactiveCardColor,
-                      child: IconCardWidget(
-                        icon: FontAwesomeIcons.mars,
-                        text: 'MALE',
-                      ),
+                    color: (selectedGender == Gender.male)
+                        ? activeCardColor
+                        : inactiveCardColor,
+                    child: IconCardWidget(
+                      icon: FontAwesomeIcons.mars,
+                      text: 'MALE',
                     ),
                   ),
                 ),
                 Expanded(
-                  child: GestureDetector(
+                  child: ReusableCard(
                     onTap: () {
                       setState(() {
                         selectedGender = Gender.female;
                       });
                     },
-                    child: ReusableCard(
-                      color: (selectedGender == Gender.female)
-                          ? activeCardColor
-                          : inactiveCardColor,
-                      child: IconCardWidget(
-                        icon: FontAwesomeIcons.venus,
-                        text: 'FEMALE',
-                      ),
+                    color: (selectedGender == Gender.female)
+                        ? activeCardColor
+                        : inactiveCardColor,
+                    child: IconCardWidget(
+                      icon: FontAwesomeIcons.venus,
+                      text: 'FEMALE',
                     ),
                   ),
                 ),
