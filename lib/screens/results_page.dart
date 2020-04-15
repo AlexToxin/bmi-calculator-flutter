@@ -1,3 +1,4 @@
+import 'package:bmi_calculator/components/bmi_calculator.dart';
 import 'package:bmi_calculator/components/bottom_button.dart';
 import 'package:bmi_calculator/components/reusable_card.dart';
 import 'package:bmi_calculator/constants.dart';
@@ -5,6 +6,10 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 class ResultsPage extends StatelessWidget {
+  final BmiDTO result;
+
+  ResultsPage({@required this.result});
+
   @override
   Widget build(BuildContext context) {
     return SafeArea(
@@ -34,7 +39,7 @@ class ResultsPage extends StatelessWidget {
                       Expanded(
                         child: Center(
                           child: Text(
-                            'NORMAL',
+                            result.title.toUpperCase(),
                             style: TextStyle(
                               color: Colors.greenAccent,
                               fontSize: 25,
@@ -47,7 +52,7 @@ class ResultsPage extends StatelessWidget {
                         flex: 2,
                         child: Center(
                           child: Text(
-                            '22.1',
+                            result.value,
                             style: kMainItemTextStyle.copyWith(
                               fontSize: 100,
                             ),
@@ -67,7 +72,7 @@ class ResultsPage extends StatelessWidget {
                         child: Align(
                           alignment: Alignment.topCenter,
                           child: Text(
-                            '18,5 - 25 kg/m2',
+                            result.range,
                             style: kDefaultSecondPageTextStyle,
                           ),
                         ),
@@ -75,7 +80,7 @@ class ResultsPage extends StatelessWidget {
                       Expanded(
                         child: Center(
                           child: Text(
-                            'You have a normal body weight. Good job!',
+                            result.description,
                             style: kDefaultSecondPageTextStyle,
                             textAlign: TextAlign.center,
                           ),
