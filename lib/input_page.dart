@@ -1,3 +1,4 @@
+import 'package:bmi_calculator/results_page.dart';
 import 'package:bmi_calculator/reusable_card.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
@@ -237,6 +238,22 @@ class _InputPageState extends State<InputPage> {
             ),
           ),
           Container(
+            child: RawMaterialButton(
+              child: Text(
+                'CALCULATE YOUR BMI',
+                style: TextStyle(fontSize: 20),
+              ),
+              onPressed: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) {
+                      return ResultsPage();
+                    },
+                  ),
+                );
+              },
+            ),
             height: 80,
             color: kAccentColor,
             width: double.infinity,
