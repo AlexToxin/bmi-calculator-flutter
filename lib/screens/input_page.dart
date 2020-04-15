@@ -1,13 +1,15 @@
-import 'package:bmi_calculator/results_page.dart';
-import 'package:bmi_calculator/reusable_card.dart';
+import 'package:bmi_calculator/components/bottom_button.dart';
+import 'package:bmi_calculator/components/reusable_card.dart';
+import 'package:bmi_calculator/components/round_icon_button.dart';
+import 'package:bmi_calculator/screens/results_page.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
 import 'package:flutter/widgets.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
-import 'constants.dart';
-import 'icon_card_widget.dart';
+import '../components/icon_card_widget.dart';
+import '../constants.dart';
 
 enum Gender {
   male,
@@ -238,55 +240,22 @@ class _InputPageState extends State<InputPage> {
                 ],
               ),
             ),
-            Container(
-              child: RawMaterialButton(
-                child: Text(
-                  'CALCULATE YOUR BMI',
-                  style: kLargeButtonTextStyle,
-                ),
-                onPressed: () {
-                  Navigator.push(
-                    context,
-                    MaterialPageRoute(
-                      builder: (context) {
-                        return ResultsPage();
-                      },
-                    ),
-                  );
-                },
-              ),
-              height: 80,
-              color: kAccentColor,
-              width: double.infinity,
-              margin: EdgeInsets.only(top: 10),
+            BottomButton(
+              text: 'CALCULATE YOUR BMI',
+              onPressed: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) {
+                      return ResultsPage();
+                    },
+                  ),
+                );
+              },
             )
           ],
         ),
       ),
-    );
-  }
-}
-
-class RoundIconButton extends StatelessWidget {
-  final IconData icon;
-  final Function onPressed;
-
-  RoundIconButton({@required this.icon, @required this.onPressed});
-
-  @override
-  Widget build(BuildContext context) {
-    return RawMaterialButton(
-      fillColor: Colors.white.withOpacity(.25),
-      shape: CircleBorder(),
-      child: Icon(
-        this.icon,
-        color: Colors.white,
-      ),
-      constraints: BoxConstraints.tightFor(
-        width: 56.0,
-        height: 56.0,
-      ),
-      onPressed: this.onPressed,
     );
   }
 }
