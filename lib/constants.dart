@@ -17,3 +17,11 @@ const kMainItemTextStyle = TextStyle(
   fontSize: 50,
   fontWeight: FontWeight.w900,
 );
+
+const kLargeButtonTextStyle =
+TextStyle(fontSize: 25, fontWeight: FontWeight.bold);
+
+const kDefaultSecondPageTextStyle = TextStyle(
+  fontWeight: FontWeight.bold,
+  fontSize: 20,
+);
